@@ -1,5 +1,7 @@
 const pokemonList = document.getElementById("pokemonList")
 const loadMoreButton = document.getElementById("loadMoreButton")
+const modalButton = document.getElementById("openModal")
+
 let offset = 0
 const limit = 10;
 const maxRecords = 151;
@@ -45,8 +47,15 @@ loadMoreButton.addEventListener("click",() => {
   else{
     loadPokemonItens(offset, limit);
   }
-
 })
+
+function abreModal(){
+  window.alert("Vai abrir o modal")
+}
+
+/* modalButton.addEventListener("click",()=>{
+  
+}) */
 
 
 
