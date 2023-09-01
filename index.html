@@ -21,9 +21,11 @@
     />
 
     <!-- Nosso CSS -->
+    <link rel="stylesheet" href="assets/css/tabs.css" media="screen"  />
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/pokedex.css" />
     <link rel="stylesheet" href="assets/css/modal.css" />
+    
   </head>
   <body>
     <section class="content">
@@ -37,59 +39,106 @@
 
       <div class="pagination">
         <button id="loadMoreButton" type="button">Load More</button>
-      </div>   
+      </div>
       <!-- <button id="openModal" onclick="abreModal()"  type="button">Abrir modal</button> -->
 
-      <button id="openModal" onclick="openModal('dv-modal')"  type="button">Abrir modal</button>
-      
+      <button id="openModal" onclick="openModal('dv-modal')" type="button">
+        Abrir modal
+      </button>
     </section>
-          <!-- Conteudo Modal -->
-
-
+    <!-- Conteudo Modal -->
     <div id="dv-modal" class="modal">
-        <div class="modal-content">
-<!--             <div class="modal-header">
+      <div class="modal-content">
+        <!--             <div class="modal-header">
                 <h1>Meu modal com Bulbasauro</h1>
             </div> -->
-
-            <div class="modal-body">
-              <div class="sub-header">
-                <div class="content-sub-header" >
-                  <h3 class="sub-h3" >Bulbasaur</h3>
-                  <ol class="typesDetail">
-                    <li class="type">Poison</li>
-                    <li class="type">Grass</li>
-                  </ol>
-                </div>
-                <div class="content-sub-header" >
-                  <span class="number">#001</span>                    
-
-                </div>                
-              </div>
-
-              
-
-
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" 
-                    alt="Pokemon figura" style="width: 30%;">
+        <div class="modal-body">
+          <div class="sub-header">
+            <div class="content-sub-header">
+              <h1 class="sub-title">Bulbasaur</h1>
+              <ol class="typesDetail">
+                <li class="type">Poison</li>
+                <li class="type">Grass</li>
+              </ol>
             </div>
-
-            <div class="modal-footer">
-                <button class="btn" onclick="closeModal('dv-modal')">Fechar</button>
+            <div class="content-sub-header">
+              <span class="number">#001</span>
             </div>
+          </div>
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+            alt="Pokemon figura"
+            style="width: 30%"
+          />
+
         </div>
-    </div>
 
-    <script src="script.js"></script>
-</body>
-
-</html>
+        <!-- Aqui esta o tab -->
+        <div class="tab-container" >          
+          <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'about')">About</button>
+            <button class="tablinks" onclick="openCity(event, 'base-stats')">Base Stats</button>
+            <button class="tablinks" onclick="openCity(event, 'evolution')">Evolution</button>
+            <button class="tablinks" onclick="openCity(event, 'moves')">Moves</button>
+          </div>
           
-          <!-- Conteudo Modal -->
+          <div id="about" class="tabcontent">
+            <div class="lista-col">
+              <h4 class="lista-titulo" >Species</h4>
+              <span class="lista-conteudo" >Seed</span>
+            </div>
+            <div class="lista-col">
+              <h4 class="lista-titulo" >Height</h4>
+              <span class="lista-conteudo" >Seed</span>
+            </div>                      
+          </div>
+          
+          <div id="base-stats" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p> 
+          </div>
+          
+          <div id="evolution" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+          </div>
+
+          <div id="moves" class="tabcontent">
+            <h3>Moves</h3>
+            <p>Moves from pokemon.</p>
+          </div>          
+
+        </div>
+        <!-- Aqui esta o tab -->
+
+        <div class="modal-footer">                          
+          <button class="btn" onclick="closeModal('dv-modal')">Fechar</button>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- Conteudo Modal -->
 
     <script src="assets/js/pokemon-model.js"></script>
     <script src="assets/js/poke-api.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/modal-prog.js"></script>
+    <script src="assets/js/tabs.js"></script>
+<!--     <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script> -->
   </body>
 </html>
