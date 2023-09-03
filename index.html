@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/pokedex.css" />
     <link rel="stylesheet" href="assets/css/modal.css" />
+    <link rel="stylesheet" href="assets/css/progressBar.css" />
+    <style id="estilo-improvisado" ></style>
     
   </head>
   <body>
@@ -66,9 +68,9 @@
             </div>
           </div>
           <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif"
             alt="Pokemon figura"
-            style="width: 30%"
+            style="width: 30%;image-resolution: 600dpi;"
           />
 
         </div>
@@ -93,9 +95,28 @@
             </div>                      
           </div>
           
-          <div id="base-stats" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p> 
+          <div id="base-stats" class="tabcontent" >
+            <!-- <h3>Base Stats</h3> -->
+            <div class="containerProg" >
+              <div class="bloco-stats">                               
+                <span class="titulo-stats" >HP</span>  
+                <span class="titulo-stats-numero" >45</span>  
+                <div class="progress2 progress-moved" id="moved1" >                  
+                  <div class="progress-bar2" style="width: 45%;" id="bar1" ></div>                       
+                </div>  
+              </div>                 
+            </div>
+
+            <div class="containerProg" >
+              <div class="bloco-stats">                               
+                <span class="titulo-stats" >Attack</span>  
+                <span class="titulo-stats-numero" >60</span>  
+                <div class="progress2 progress-moved" id="moved2">                  
+                  <div class="progress-bar2" style="width: 60%;" id="bar2"></div>                       
+                </div>  
+              </div>                 
+            </div>
+            <p>Type defenses</p> 
           </div>
           
           <div id="evolution" class="tabcontent">
@@ -103,13 +124,17 @@
             <p>Tokyo is the capital of Japan.</p>
           </div>
 
-          <div id="moves" class="tabcontent">
+          <div id="moves" class="tabcontent prog2">
             <h3>Moves</h3>
+
             <p>Moves from pokemon.</p>
+            
           </div>          
 
         </div>
         <!-- Aqui esta o tab -->
+
+
 
         <div class="modal-footer">                          
           <button class="btn" onclick="closeModal('dv-modal')">Fechar</button>
@@ -125,6 +150,7 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/modal-prog.js"></script>
     <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/progressBar.js"></script>
 <!--     <script>
       function openCity(evt, cityName) {
         var i, tabcontent, tablinks;
