@@ -48,23 +48,21 @@
         Abrir modal
       </button>
     </section>
-    <!-- Conteudo Modal -->
+    <!-- Conteudo Modal Início -->
     <div id="dv-modal" class="modal">
       <div class="modal-content">
-        <!--             <div class="modal-header">
-                <h1>Meu modal com Bulbasauro</h1>
-            </div> -->
+
         <div class="modal-body">
           <div class="sub-header">
             <div class="content-sub-header">
-              <h1 class="sub-title">Bulbasaur</h1>
+              <h1 class="sub-title" id="modalPokTitle">Bulbasaur</h1>
               <ol class="typesDetail">
                 <li class="type">Poison</li>
                 <li class="type">Grass</li>
               </ol>
             </div>
             <div class="content-sub-header">
-              <span class="number">#001</span>
+              <span class="number" id="modalPokNumber" >#001</span>
             </div>
           </div>
           <img
@@ -75,7 +73,7 @@
 
         </div>
 
-        <!-- Aqui esta o tab -->
+        <!-- Aqui esta o tab - Início-->
         <div class="tab-container" >          
           <div class="tab">
             <button class="tablinks" onclick="openCity(event, 'about')">About</button>
@@ -85,18 +83,23 @@
           </div>
           
           <div id="about" class="tabcontent">
-            <div class="lista-col">
+<!--             <div class="lista-col">
               <h4 class="lista-titulo" >Species</h4>
               <span class="lista-conteudo" >Seed</span>
-            </div>
-            <div class="lista-col">
+            </div> -->
+<!--             <div class="lista-col">
               <h4 class="lista-titulo" >Height</h4>
               <span class="lista-conteudo" >Seed</span>
-            </div>                      
+            </div>   -->
+            <!-- <h3>Breeding</h3> -->
+<!--             <div class="lista-col">
+              <h4 class="lista-titulo" >Egg groups</h4>
+              <span class="lista-conteudo" >Monster</span>
+            </div>   -->
           </div>
           
           <div id="base-stats" class="tabcontent" >
-            <!-- <h3>Base Stats</h3> -->
+            
             <div class="containerProg" >
               <div class="bloco-stats">                               
                 <span class="titulo-stats" >HP</span>  
@@ -132,18 +135,13 @@
           </div>          
 
         </div>
-        <!-- Aqui esta o tab -->
-
-
-
+        <!-- Aqui esta o tab Final-->
         <div class="modal-footer">                          
           <button class="btn" onclick="closeModal('dv-modal')">Fechar</button>
         </div>
       </div>
-
-
     </div>
-    <!-- Conteudo Modal -->
+    <!-- Conteudo Modal Final-->
 
     <script src="assets/js/pokemon-model.js"></script>
     <script src="assets/js/poke-api.js"></script>
@@ -151,20 +149,6 @@
     <script src="assets/js/modal-prog.js"></script>
     <script src="assets/js/tabs.js"></script>
     <script src="assets/js/progressBar.js"></script>
-<!--     <script>
-      function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
-      </script> -->
+
   </body>
 </html>

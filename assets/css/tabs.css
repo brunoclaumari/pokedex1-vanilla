@@ -51,13 +51,16 @@
 }
 
 .lista-col .lista-titulo {
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
   width: 120px;
   font-weight: bold;
-  margin: 5px;  
+  color: #a3a2a2;
+  margin: 5px;
+  font-size: 12px;  
 }
 
 .lista-col .lista-conteudo {
-  background-color: dodgerblue;
+  /* background-color: dodgerblue; */
   width: 80%;
+  font-size: 12px;  
 }
