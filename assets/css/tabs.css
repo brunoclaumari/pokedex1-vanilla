@@ -21,8 +21,8 @@
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  font-size: 12px;
-  width: 25%;
+  font-size: 16px;
+  width: 33.3333%;
 }
 
 /* Change background color of buttons on hover */
@@ -56,11 +56,11 @@
   font-weight: bold;
   color: #a3a2a2;
   margin: 5px;
-  font-size: 12px;  
+  font-size: 16px;  
 }
 
 .lista-col .lista-conteudo {
   /* background-color: dodgerblue; */
   width: 80%;
-  font-size: 12px;  
+  font-size: 15px;  
 }

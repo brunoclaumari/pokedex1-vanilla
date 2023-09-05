@@ -37,6 +37,8 @@
       </div>
       <ol class="pokemons" id="pokemonList">
         <!-- Pokemons here -->
+        <!-- <button id="testee" onclick="openTeste(1)" style="padding: 0; margin: 0;"></button> -->
+        <!-- <li onclick="openTeste(1)" >testeee</li> -->
       </ol>
 
       <div class="pagination">
@@ -44,16 +46,16 @@
       </div>
       <!-- <button id="openModal" onclick="abreModal()"  type="button">Abrir modal</button> -->
 
-      <button id="openModal" onclick="openModal('dv-modal')" type="button">
+<!--       <button id="openModal" onclick="openModal('dv-modal')" type="button">
         Abrir modal
-      </button>
+      </button> -->
     </section>
     <!-- Conteudo Modal Início -->
     <div id="dv-modal" class="modal">
-      <div class="modal-content">
-
-        <div class="modal-body">
-          <div class="sub-header">
+      <div class="modal-content" id="modalContent" >
+        <!-- Content principal modal - Início-->
+        <div class="modal-body" id="modalBody">
+<!--           <div class="sub-header">
             <div class="content-sub-header">
               <h1 class="sub-title" id="modalPokTitle">Bulbasaur</h1>
               <ol class="typesDetail">
@@ -62,27 +64,27 @@
               </ol>
             </div>
             <div class="content-sub-header">
-              <span class="number" id="modalPokNumber" >#001</span>
+              <span class="number" id="modalPokNumber">#001</span>
             </div>
           </div>
           <img
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif"
             alt="Pokemon figura"
             style="width: 30%;image-resolution: 600dpi;"
-          />
-
+          /> -->
         </div>
+        <!-- Content principal modal - Fim-->
 
         <!-- Aqui esta o tab - Início-->
         <div class="tab-container" >          
           <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'about')">About</button>
-            <button class="tablinks" onclick="openCity(event, 'base-stats')">Base Stats</button>
-            <button class="tablinks" onclick="openCity(event, 'evolution')">Evolution</button>
-            <button class="tablinks" onclick="openCity(event, 'moves')">Moves</button>
+            <button class="tablinks" onclick="openTab(event, 'about')">About</button>
+            <button class="tablinks" onclick="openTab(event, 'base-stats')">Base Stats</button>
+            <button class="tablinks" onclick="openTab(event, 'evolution')">Evolution</button>
+            <!-- <button class="tablinks" onclick="openTab(event, 'moves')">Moves</button> -->
           </div>
           
-          <div id="about" class="tabcontent">
+          <div id="about" class="tabcontent" >
 <!--             <div class="lista-col">
               <h4 class="lista-titulo" >Species</h4>
               <span class="lista-conteudo" >Seed</span>

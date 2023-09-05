@@ -5,7 +5,7 @@ const urlEvolution = "https://pokeapi.co/api/v2/evolution-chain";
 
 function convertPokeApiDetailToPokemon(pokeDetail){
     const pokemon = new Pokemon()
-    pokemon.order = pokeDetail.id
+    pokemon.id = pokeDetail.id
     pokemon.name = pokeDetail.name
 
     const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
@@ -50,6 +50,7 @@ function convertDetailToPokemonAbout(returnPokemon){
    pokAbout.text_explanation = "Esse é o páa";
    pokAbout.stats = returnPokemon.stats;
    pokAbout.moves = returnPokemon.moves;
+   pokAbout.photo = returnPokemon.sprites.versions["generation-v"]["black-white"].animated.front_default
 
    return pokAbout;
 
@@ -72,6 +73,7 @@ pokeapi.getPokemonsAbout = (id)=>{
     return fetch(urlLoc)
             .then((response) => response.json())
             .then((returnPokemon)=>{
+                currentPokemon = convertPokeApiDetailToPokemon(returnPokemon);
                 return convertDetailToPokemonAbout(returnPokemon)
             });
 

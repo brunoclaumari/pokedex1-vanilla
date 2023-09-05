@@ -1,5 +1,5 @@
 class Pokemon {
-    order;
+    id;
     name;
     type;
     types = [];
@@ -14,6 +14,8 @@ class PokemonAbout {
     text_explanation;//opcional, arrumar esse só quando o resto estiver ok
     stats=[];
     moves=[];
+    types=[];
+    photo;
 }
 
 class PokemonSpecies {

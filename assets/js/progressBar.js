@@ -10,6 +10,34 @@ function addAnimationTeste(elementHtml){
   dynamicStyles.innerHTML += elementHtml;
 }
 
+function createAnimationStyle(num, colorZero, colorCem, widthParam){
+  return `@keyframes progressAnimation${num} {
+    0% {
+      width: 5%;
+      background-color: ${colorZero};  
+    }
+    100% {
+      width: ${widthParam};
+      background-color: ${colorCem};
+    }
+  }`;
+}
+
+function createStat(tituloStats, numeroStats, index){
+  let statHtml = `<div class="containerProg" >
+                    <div class="bloco-stats">                               
+                      <span class="titulo-stats" >${tituloStats}</span>  
+                      <span class="titulo-stats-numero" >${numeroStats}</span>  
+                      <div class="progress2 progress-moved" id="moved${index}" >                  
+                        <div class="progress-bar2" style="width: 45%;" id="bar${index}" ></div>                       
+                      </div>  
+                    </div>                 
+                  </div>`;
+
+    //addAnimationTeste(createAnimationStyle())              
+
+}
+
 addAnimationTeste(`@keyframes progressAnimation${1} {
     0% {
       width: 5%;

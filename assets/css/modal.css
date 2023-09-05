@@ -75,7 +75,7 @@ p {
 }
 
 .modal-footer{
-    background-color: #61e1ca; 
+    /* background-color: #61e1ca;  */
     filter: brightness(1.15);
     border-radius: 0px 0px var(--modal-radius) var(--modal-radius);
 }
@@ -116,4 +116,11 @@ p {
 
 .modal-body .sub-header .content-sub-header .sub-title {
     margin: 3px;
+    text-transform: capitalize;
+}
+
+#imgModal {
+    width: 100%;
+    text-align: center;    
+    margin: -18px;
 }
