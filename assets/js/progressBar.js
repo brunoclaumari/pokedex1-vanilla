@@ -1,13 +1,8 @@
-var idBar1 = document.getElementById('bar1');   
-var idBar2 = document.getElementById('bar2');
-const move1 = document.getElementById('moved1');
-const move2 = document.getElementById('moved2');
 
 const dynamicStyles = document.getElementById("estilo-improvisado");
 
-function addAnimationTeste(elementHtml){  
-
-  dynamicStyles.innerHTML += elementHtml;
+function addAnimationToStyle(cssAnimation){  
+  dynamicStyles.innerHTML += cssAnimation;
 }
 
 function createAnimationStyle(num, colorZero, colorCem, widthParam){
@@ -20,56 +15,74 @@ function createAnimationStyle(num, colorZero, colorCem, widthParam){
       width: ${widthParam};
       background-color: ${colorCem};
     }
-  }`;
+  }
+  
+  `;
 }
 
 function createStat(tituloStats, numeroStats, index){
-  let statHtml = `<div class="containerProg" >
-                    <div class="bloco-stats">                               
-                      <span class="titulo-stats" >${tituloStats}</span>  
-                      <span class="titulo-stats-numero" >${numeroStats}</span>  
-                      <div class="progress2 progress-moved" id="moved${index}" >                  
-                        <div class="progress-bar2" style="width: 45%;" id="bar${index}" ></div>                       
-                      </div>  
-                    </div>                 
-                  </div>`;
+  let statHtml = `
+                    <div class="containerProg" >
+                      <div class="bloco-stats">                               
+                        <span class="titulo-stats" >${tituloStats}</span>  
+                        <span class="titulo-stats-numero" >${numeroStats}</span>  
+                        <div class="progressConteiner" > 
+                          <div class="progress2 progress-moved" id="moved${index}" >                  
+                            <div class="progress-bar2" style="width: ${numeroStats}%;" id="bar${index}" ></div>                       
+                          </div>
+                        </div> 
+                      </div>                 
+                    </div>
+                  `;                  
 
-    //addAnimationTeste(createAnimationStyle())              
+  let colorZeroLoc = "#ef476f";
+  let colorCemLoc = "#f7d0d9";
+  if(index % 2 != 0){
+    colorZeroLoc = "#4e9c96";
+    colorCemLoc = "#90f1aa";
+  }
 
+  addAnimationToStyle(createAnimationStyle(index,colorZeroLoc,colorCemLoc, `${numeroStats}%`)); 
+  return statHtml;
 }
 
-addAnimationTeste(`@keyframes progressAnimation${1} {
-    0% {
-      width: 5%;
-      background-color: #ef476f;  
-    }
-    100% {
-      width: ${idBar1.style.width};
-      background-color: ##f7d0d9;
-    }
-  }`);
-  //${item.style.width}
+async function preencheAbaBaseStats(){
+  let baseStats = document.getElementById("base-stats");//base-stats 
 
-  addAnimationTeste(`@keyframes progressAnimation${2} {
-    0% {
-      width: 5%;
-      background-color: #4e9c96;
+  const lista = about.stats.map((obj, index)=>{
+    //debugger
+    var num = obj.base_stat;
+    var titulo = obj.stat.name;
+    return createStat(titulo,num, index + 1);
+  });
+
+  baseStats.innerHTML = lista.join("");
+}
+
+function chargeAnimations(){
+  //debugger
+  let quant = about.stats.length;
+
+  for (var i = 0; i < quant; i++) {
+    let index = i + 1;
+    let colorZeroLoc = "#ef476f";
+    let colorCemLoc = "#f7d0d9";
+    if(index % 2 != 0){
+      colorZeroLoc = "#4e9c96";
+      colorCemLoc = "#90f1aa";
     }
-    100% {
-      width: ${idBar2.style.width};
-      background-color: #90f1aa;      
-    }
-  }`);
+    addAnimationOnHtml(index, colorZeroLoc, colorCemLoc);
+  }
+}
 
-  move1.style.width = "90%";
-  move1.style.backgroundColor = "#ef476f";
+function addAnimationOnHtml(index, colorZeroLoc, colorCemLoc){
+  let moveLocal = document.getElementById(`moved${index}`);
+  let idBarLocal = document.getElementById(`bar${index}`);
 
-  idBar1.style.animation = `progressAnimation${1} 6s`; 
-  idBar1.style.backgroundColor = "#f7d0d9" 
-  
-  
-  idBar2.style.animation = `progressAnimation${2} 6s`; 
-  idBar2.style.backgroundColor = "#90f1aa"
+  moveLocal.style.width = "90%";
+  moveLocal.style.backgroundColor = colorZeroLoc;
 
-  move2.style.width = "90%";
-  move2.style.backgroundColor = "#4e9c96";
+  idBarLocal.style.animation = `progressAnimation${index} 6s`; 
+  idBarLocal.style.backgroundColor = colorCemLoc; 
+
+}

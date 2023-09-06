@@ -93,7 +93,7 @@ p {
     color: white;
     padding: 0.25rem 1rem;
     margin: 0.2rem 3px 0.2rem 3px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border-radius: 1rem;
     text-align: center;
     filter: brightness(1.15);
@@ -107,7 +107,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    margin-bottom: 25px;
 }
 
 .modal-body .sub-header .content-sub-header{

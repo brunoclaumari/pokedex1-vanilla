@@ -21,7 +21,7 @@
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  font-size: 16px;
+  font-size: 13px;
   width: 33.3333%;
 }
 
@@ -38,7 +38,7 @@
 /* Style the tab content */
 .tabcontent {
   display: none;
-  padding: 6px 12px;
+  padding: 2px 3px;
   border: 1px solid #ccc;
   border-top: none;
   background-color: white;
@@ -56,11 +56,11 @@
   font-weight: bold;
   color: #a3a2a2;
   margin: 5px;
-  font-size: 16px;  
+  font-size: 13px;  
 }
 
 .lista-col .lista-conteudo {
   /* background-color: dodgerblue; */
   width: 80%;
-  font-size: 15px;  
+  font-size: 12px;  
 }

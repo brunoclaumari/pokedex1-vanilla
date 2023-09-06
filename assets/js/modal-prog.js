@@ -88,6 +88,8 @@ async function openModal(event,mn,id) {
     modalBody.innerHTML = preencheModalPrincipal();
 
     preencheTabAbout();
+    await preencheAbaBaseStats();
+    chargeAnimations();
 }
 
 async function loadPokemonSpecies(id){
